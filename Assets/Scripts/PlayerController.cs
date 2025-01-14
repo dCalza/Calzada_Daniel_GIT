@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject flashlight;
+    private bool flashlightActive = false;
+
     public float speed = 5f;
     public float sprintMultiplier = 2f;
     public float jumpForce = 5f;
@@ -14,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        flashlight.SetActive(false);
     }
 
     private void Update()
@@ -34,6 +40,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && flashlightActive == false)
+        {
+            flashlight.SetActive(true);
+            flashlightActive = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.F) && flashlightActive == true)
+        {
+            flashlight.SetActive(false);
+            flashlightActive = false;
         }
     }
 
