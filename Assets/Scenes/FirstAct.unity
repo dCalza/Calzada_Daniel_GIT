@@ -1839,7 +1839,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1907858509
 MonoBehaviour:
@@ -1853,9 +1853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c724f7627cdbb4cbb7c7e301ae93e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  sprintMultiplier: 3
-  jumpForce: 10
+  speed: 300
+  sprintMultiplier: 2
+  jumpForce: 15
 --- !u!136 &1907858510
 CapsuleCollider:
   m_ObjectHideFlags: 0
